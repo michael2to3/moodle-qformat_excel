@@ -6,10 +6,25 @@ require_once "$CFG->libdir/xmlize.php";
 require_once "$CFG->dirroot/lib/uploadlib.php";
 require_once "$CFG->dirroot/question/format/xml/format.php";
 require_once "$CFG->dirroot/lib/excellib.class.php";
+use moodle_exception;
 
-class qformat_xlsxtable extends qformat_xml
+class qformat_xlsxtable extends qformat_default
 {
     private $lessonquestions = [];
+
+
+    public function provide_import()
+    {
+        return true;
+
+    }//end provide_import()
+
+
+    public function provide_export()
+    {
+        return true;
+
+    }//end provide_export()
 
 
     public function mime_type()
@@ -30,10 +45,39 @@ class qformat_xlsxtable extends qformat_xml
     }//end validate_file()
 
 
-    public function importpreprocess()
+    public function readquestions($data)
     {
+        $qa = [];
+        foreach ($data as $i => $question) {
+            $name         = $question[0];
+            $questiontext = $question[1];
+            $answer       = $question[2];
+            if (empty($name) || empty($questiontext) || empty($answer)) {
+                debugging('Skipping question '.$i, DEBUG_DEVELOPER);
+                continue;
+            }
 
-    }//end importpreprocess()
+            $q               = $this->defaultquestion();
+            $q->id           = $i;
+            $q->name         = $name;
+            $q->questiontext = $questiontext;
+            $q->qtype        = 'shortanswer';
+            $q->feedback     = [
+                0 => [
+                    'text'   => ' ',
+                    'format' => FORMAT_HTML,
+                ]
+            ];
+
+            $q->fraction = [1];
+            $q->answer   = [$answer];
+            $qa[]        = $q;
+        }//end foreach
+
+        debugging('qa: '.print_r($qa, true), DEBUG_DEVELOPER);
+        return $qa;
+
+    }//end readquestions()
 
 
     public function export_file_extension()
@@ -59,11 +103,12 @@ class qformat_xlsxtable extends qformat_xml
 
         $workbook  = new MoodleExcelWorkbook($this->filename);
         $worksheet = $workbook->add_worksheet('Questions');
-        $answers   = $question->options->answers;
         foreach ($this->lessonquestions as $rowIndex => $question) {
-            $worksheet->write($rowIndex, 0, $question->questiontext);
-            foreach ($answers as $answer) {
-                $worksheet->write($rowIndex, 1, $answer->answer);
+            $worksheet->write($rowIndex, 0, $question->name);
+            $worksheet->write($rowIndex, 1, $question->questiontext);
+            $answers = $question->options->answers;
+            foreach ($answers as $a) {
+                $worksheet->write($rowIndex, 2, $a->answer);
             }
         }
 
@@ -93,13 +138,21 @@ class qformat_xlsxtable extends qformat_xml
         $data = [];
         foreach ($worksheet->getRowIterator() as $row) {
             $cellIterator = $row->getCellIterator();
-            $cellIterator->setIterateOnlyExistingCells(false);
-            $rowData = [];
+            $cellIterator->setIterateOnlyExistingCells(true);
+            $rowData  = [];
+            $rowEmpty = true;
             foreach ($cellIterator as $cell) {
-                $rowData[] = $cell->getValue();
+                $value = $cell->getValue();
+                if (!empty($value)) {
+                    $rowEmpty = false;
+                }
+
+                $rowData[] = $value;
             }
 
-            $data[] = $rowData;
+            if (!$rowEmpty) {
+                $data[] = $rowData;
+            }
         }
 
         return $data;

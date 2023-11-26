@@ -1,6 +1,6 @@
-# moodle2xlsx
+# moodle-qformat_xlsx
 
-`moodle2xlsx` is a plugin for Moodle that provides seamless integration for importing and exporting XLSX files. This plugin enhances the functionality of Moodle by allowing users to easily upload and download XLSX files, which can be particularly useful for managing course data, student information, grades, and more.
+`moodle-qformat_xlsx` is a plugin for Moodle that provides seamless integration for importing and exporting XLSX files. This plugin enhances the functionality of Moodle by allowing users to easily upload and download XLSX files, which can be particularly useful for managing course data, student information, grades, and more.
 
 ## Features
 
@@ -13,7 +13,7 @@
 
 1. **Download the Plugin**: Clone this repository or download the ZIP file.
     ```
-    git clone https://github.com/michael2to3/moodle2xlsx.git
+    git clone https://github.com/michael2to3/moodle-qformat_xlsx.git
     ```
 2. **Install the Plugin on Moodle**:
    - Navigate to your Moodle installation's `admin/tool/installaddon/index.php` page.
@@ -21,13 +21,13 @@
    - Follow the on-screen instructions to complete the installation.
 
 3. **Verify Installation**:
-   - After installation, 'moodle2xlsx' should be listed under the Plugins section in Moodle.
+   - After installation, 'moodle-qformat_xlsx' should be listed under the Plugins section in Moodle.
 
 ## Usage
 
 ### Importing XLSX Files
 
-1. Navigate to the `moodle2xlsx` import section in Moodle.
+1. Navigate to the `moodle-qformat_xlsx` import section in Moodle.
 2. Choose the XLSX file you want to import.
 3. Map the columns in your XLSX file to the corresponding fields in Moodle.
 4. Click on 'Import' to complete the process.
@@ -45,7 +45,7 @@ No additional configuration is needed after installation. However, you can modif
 
 ## Support
 
-For issues, feature requests, or contributions, please use the [Issues](https://github.com/michael2to3/moodle2xlsx/issues) section of this repository.
+For issues, feature requests, or contributions, please use the [Issues](https://github.com/michael2to3/moodle-qformat_xlsx/issues) section of this repository.
 
 ## License
 
