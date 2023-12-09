@@ -8,6 +8,9 @@ require_once "$CFG->dirroot/question/format/xml/format.php";
 require_once "$CFG->dirroot/lib/excellib.class.php";
 use moodle_exception;
 
+require_once "$CFG->libdir/phpspreadsheet/vendor/autoload.php";
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
 class qformat_xlsxtable extends qformat_default
 {
     private $lessonquestions = [];
@@ -17,21 +20,21 @@ class qformat_xlsxtable extends qformat_default
     {
         return true;
 
-    }//end provide_import()
+    }
 
 
     public function provide_export()
     {
         return true;
 
-    }//end provide_export()
+    }
 
 
     public function mime_type()
     {
         return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
-    }//end mime_type()
+    }
 
 
     public function validate_file(stored_file $file): string
@@ -42,49 +45,69 @@ class qformat_xlsxtable extends qformat_default
 
         return '';
 
-    }//end validate_file()
+    }
 
 
     public function readquestions($data)
     {
-        $qa = [];
-        foreach ($data as $i => $question) {
-            $name         = $question[0];
-            $questiontext = $question[1];
-            $answer       = $question[2];
-            if (empty($name) || empty($questiontext) || empty($answer)) {
-                debugging('Skipping question '.$i, DEBUG_DEVELOPER);
-                continue;
+        $allQuestions = [];
+        foreach ($data['sheets'] as $sheetIndex => $sheetData) {
+            $questions = $sheetData['rows'];
+            $images = $sheetData['images'] ?? [];
+
+            foreach ($questions as $i => $question) {
+                if (count($question) < 3) {
+                    debugging('Skipping question '.$i.' in sheet due to insufficient data', DEBUG_DEVELOPER);
+                    continue;
+                }
+
+                $name         = $question[0];
+                $questiontext = $question[1];
+                $answer       = $question[2];
+                if (empty($name) || empty($questiontext) || empty($answer)) {
+                    debugging('Skipping question '.$i.' in sheet due to empty fields', DEBUG_DEVELOPER);
+                    continue;
+                }
+
+                if (isset($images[0])) {
+                    $imageData = $images[0];
+                    $imageName = $imageData['name'];
+                    $filePath = $imageData['path'];
+                    $fileData = $imageData['base64'];
+                    $mimeType = $imageData['mimetype'];
+
+                    $questiontext .= '<img title="' . $imageName . '" src="data:' . $mimeType . ';base64,' . $fileData . '"/>';
+          throw new moodle_exception(base64_encode(print_r($images, true)));
+                }
+
+                $q               = $this->defaultquestion();
+                $q->id           = $i;
+                $q->name         = $name;
+                $q->questiontext = $questiontext;
+                $q->qtype        = 'shortanswer';
+                $q->feedback     = [
+                    0 => [
+                        'text'   => ' ',
+                        'format' => FORMAT_HTML,
+                    ],
+                ];
+
+                $q->fraction = [1];
+                $q->answer   = [$answer];
+                $allQuestions[] = $q;
             }
+        }
 
-            $q               = $this->defaultquestion();
-            $q->id           = $i;
-            $q->name         = $name;
-            $q->questiontext = $questiontext;
-            $q->qtype        = 'shortanswer';
-            $q->feedback     = [
-                0 => [
-                    'text'   => ' ',
-                    'format' => FORMAT_HTML,
-                ]
-            ];
-
-            $q->fraction = [1];
-            $q->answer   = [$answer];
-            $qa[]        = $q;
-        }//end foreach
-
-        debugging('qa: '.print_r($qa, true), DEBUG_DEVELOPER);
-        return $qa;
-
-    }//end readquestions()
+        debugging('All questions: '.print_r($allQuestions, true), DEBUG_DEVELOPER);
+        return $allQuestions;
+    }
 
 
     public function export_file_extension()
     {
         return '.xlsx';
 
-    }//end export_file_extension()
+    }
 
 
     public function writequestion($question)
@@ -92,7 +115,7 @@ class qformat_xlsxtable extends qformat_default
         $this->lessonquestions[] = $question;
         return true;
 
-    }//end writequestion()
+    }
 
 
     public function presave_process($content)
@@ -115,49 +138,72 @@ class qformat_xlsxtable extends qformat_default
         $workbook->close();
         return true;
 
-    }//end presave_process()
+        // $imagestring = "";
+        // foreach ($imagesforzipping as $imagename => $imagedata) {
+        // $filetype = strtolower(pathinfo($imagename, PATHINFO_EXTENSION));
+        // $base64data = base64_encode($imagedata);
+        // $filedata = 'data:image/' . $filetype . ';base64,' . $base64data;
+        // Embed the image name and data into the HTML.
+        // $imagestring .= '<img title="' . $imagename . '" src="' . $filedata . '"/>';
 
+    }
 
     public function readdata($filename)
     {
-        if (property_exists('qformat_default', 'importcontext')) {
-            $cm = get_coursemodule_from_id('lesson', $this->importcontext->instanceid);
-            if ($cm) {
-                return $this->lessonquestions;
-            }
-        }
-
-        if (!preg_match('#\.xlsx$#i', $filename)) {
+        if ($filename === null || !preg_match('#\.xlsx$#i', $filename)) {
             return false;
         }
 
-        $reader      = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
+        $reader = IOFactory::createReader('Xlsx');
         $spreadsheet = $reader->load($filename);
-        $worksheet   = $spreadsheet->getActiveSheet();
 
         $data = [];
-        foreach ($worksheet->getRowIterator() as $row) {
-            $cellIterator = $row->getCellIterator();
-            $cellIterator->setIterateOnlyExistingCells(true);
-            $rowData  = [];
-            $rowEmpty = true;
-            foreach ($cellIterator as $cell) {
-                $value = $cell->getValue();
-                if (!empty($value)) {
-                    $rowEmpty = false;
+        $sheetCount = $spreadsheet->getSheetCount();
+        for ($sheetIndex = 0; $sheetIndex < $sheetCount; $sheetIndex++) {
+            $worksheet = $spreadsheet->getSheet($sheetIndex);
+            $sheetData = [];
+            foreach ($worksheet->getRowIterator() as $row) {
+                $cellIterator = $row->getCellIterator();
+                $cellIterator->setIterateOnlyExistingCells(true);
+                $rowData  = [];
+                $rowEmpty = true;
+                foreach ($cellIterator as $cell) {
+                    $value = $cell->getValue();
+                    if (!empty($value)) {
+                        $rowEmpty = false;
+                    }
+
+                    $rowData[] = $value;
                 }
 
-                $rowData[] = $value;
+                if (!$rowEmpty) {
+                    $sheetData['rows'][] = $rowData;
+                }
             }
 
-            if (!$rowEmpty) {
-                $data[] = $rowData;
+            $drawings = $worksheet->getDrawingCollection();
+            foreach ($drawings as $drawing) {
+                $imageData                = [];
+                $imagePath                = $drawing->getPath();
+                $imageData['path']        = $imagePath;
+                $imageData['coordinates'] = $drawing->getCoordinates();
+                $imageData['name']        = $drawing->getName();
+                $imageData['base64']      = base64_encode(file_get_contents($imagePath));
+                $mimeType = 'image/png';
+                if (function_exists('mime_content_type')) {
+                    $mimeType = mime_content_type($imagePath);
+                }
+                $imageData['mimetype'] = $mimeType;
+
+                $sheetData['images'][] = $imageData;
             }
+
+            $data['sheets'][] = $sheetData;
         }
 
         return $data;
+    }
 
-    }//end readdata()
 
 
-}//end class
+}
