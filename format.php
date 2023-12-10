@@ -47,37 +47,33 @@ class qformat_xlsxtable extends qformat_default
 
     }
 
-
     public function readquestions($data)
     {
         $allQuestions = [];
         foreach ($data['sheets'] as $sheetIndex => $sheetData) {
-            $questions = $sheetData['rows'];
+            $sheet = $sheetData['rows'];
             $images = $sheetData['images'] ?? [];
+            $name         = $this->bottom_value('_name', $sheet);
+            $time       = $this->bottom_value('_time', $sheet);
+            $attempts   = $this->bottom_value('_attempts', $sheet);
+            $password   = $this->bottom_value('_password', $sheet);
+            $fine       = $this->bottom_value('_fine', $sheet);
+            $keys = $this->process_data($sheet);
+            $countQuestions = max(array_map(fn ($item) => count($item), $sheet));
 
-            foreach ($questions as $i => $question) {
-                if (count($question) < 3) {
-                    debugging('Skipping question '.$i.' in sheet due to insufficient data', DEBUG_DEVELOPER);
-                    continue;
+            for($i = 0; $i < $countQuestions; $i++) {
+                $questiontext = $this->bottom_value('_text', $sheet);
+
+                foreach ($keys as $key => $value) {
+                    if($key === '_answer') {
+                        debugging("Skip _answer to be processed", DEBUG_DEVELOPER);
+                        continue;
+                    }
+                    $questiontext .= "<p><b>{$key}</b>: {$value[$i]}</p>";
                 }
 
-                $name         = $question[0];
-                $questiontext = $question[1];
-                $answer       = $question[2];
-                if (empty($name) || empty($questiontext) || empty($answer)) {
-                    debugging('Skipping question '.$i.' in sheet due to empty fields', DEBUG_DEVELOPER);
-                    continue;
-                }
-
-                if (isset($images[0])) {
-                    $imageData = $images[0];
-                    $imageName = $imageData['name'];
-                    $filePath = $imageData['path'];
-                    $fileData = $imageData['base64'];
-                    $mimeType = $imageData['mimetype'];
-
-                    $questiontext .= '<img title="' . $imageName . '" src="data:' . $mimeType . ';base64,' . $fileData . '"/>';
-          throw new moodle_exception(base64_encode(print_r($images, true)));
+                foreach ($images as $image) {
+                    $questiontext .= "<img title=\"{$image['name']}\" src=\"data:{$image['mimetype']};base64,{$image['base64']}\"/>";
                 }
 
                 $q               = $this->defaultquestion();
@@ -93,15 +89,85 @@ class qformat_xlsxtable extends qformat_default
                 ];
 
                 $q->fraction = [1];
-                $q->answer   = [$answer];
+                $q->answer   = [$keys['_answer'][$i]];
                 $allQuestions[] = $q;
             }
         }
 
-        debugging('All questions: '.print_r($allQuestions, true), DEBUG_DEVELOPER);
         return $allQuestions;
     }
 
+
+    private function process_data($data)
+    {
+        $count = $this->get_counts($data);
+        $countColumns = $count[0];
+        $countRows = $count[1];
+
+        $keys = [];
+        for($j = 0; $j < $countColumns; $j++) {
+            $keys[$data[0][$j]] = [];
+        }
+        for($i = 1; $i < $countRows; $i++) {
+            for($j = 0; $j < $countColumns; $j++) {
+                $keys[$data[0][$j]][] = $data[$i][$j];
+            }
+        }
+        return $keys;
+    }
+
+    private function get_counts($data)
+    {
+        $countRows = 0;
+        $countColumns = 0;
+
+        foreach($data[0] as $i => $column) {
+            if(empty($column)) {
+                break;
+            }
+            $countColumns = $i + 1;
+        }
+
+        foreach($data as $i => $row) {
+            $countEmpty = 0;
+            for($j = 0; $j < $countColumns; $j++) {
+                $cell = $row[$j];
+                if(empty($cell)) {
+                    $countEmpty++;
+                }
+            }
+            if($countEmpty >= $countColumns) {
+                debugging("Found empty row $countEmpty >= $countColumns, at row $i", DEBUG_DEVELOPER);
+                break;
+            }
+            for($j = 0 ; $j < $countColumns; $j++) {
+                $cell = $row[$j];
+                if(!empty($cell)) {
+                    $countRows = $i + 1;
+                }
+            }
+        }
+
+        debugging("Columns: " . $countColumns, DEBUG_DEVELOPER);
+        debugging("Rows: " . $countRows, DEBUG_DEVELOPER);
+        return [$countColumns, $countRows];
+    }
+
+
+    private function bottom_value($identifier, $data)
+    {
+        foreach ($data as $i => $row) {
+            foreach ($row as $j => $value) {
+                if ($value === $identifier) {
+                    $r = $data[$i + 1][$j];
+                    debugging("Found $identifier, bottom value: {$r}", DEBUG_DEVELOPER);
+                    return $r;
+                }
+            }
+        }
+        debugging("Not found bottom value", DEBUG_DEVELOPER);
+        return "";
+    }
 
     public function export_file_extension()
     {
@@ -137,15 +203,6 @@ class qformat_xlsxtable extends qformat_default
 
         $workbook->close();
         return true;
-
-        // $imagestring = "";
-        // foreach ($imagesforzipping as $imagename => $imagedata) {
-        // $filetype = strtolower(pathinfo($imagename, PATHINFO_EXTENSION));
-        // $base64data = base64_encode($imagedata);
-        // $filedata = 'data:image/' . $filetype . ';base64,' . $base64data;
-        // Embed the image name and data into the HTML.
-        // $imagestring .= '<img title="' . $imagename . '" src="' . $filedata . '"/>';
-
     }
 
     public function readdata($filename)
@@ -164,21 +221,14 @@ class qformat_xlsxtable extends qformat_default
             $sheetData = [];
             foreach ($worksheet->getRowIterator() as $row) {
                 $cellIterator = $row->getCellIterator();
-                $cellIterator->setIterateOnlyExistingCells(true);
-                $rowData  = [];
-                $rowEmpty = true;
+                $cellIterator->setIterateOnlyExistingCells(false);
+                $rowData = [];
                 foreach ($cellIterator as $cell) {
-                    $value = $cell->getValue();
-                    if (!empty($value)) {
-                        $rowEmpty = false;
-                    }
-
+                    $value = $cell->getCalculatedValue();
                     $rowData[] = $value;
                 }
 
-                if (!$rowEmpty) {
-                    $sheetData['rows'][] = $rowData;
-                }
+                $sheetData['rows'][] = $rowData;
             }
 
             $drawings = $worksheet->getDrawingCollection();
@@ -203,7 +253,4 @@ class qformat_xlsxtable extends qformat_default
 
         return $data;
     }
-
-
-
 }
