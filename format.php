@@ -20,21 +20,21 @@ class qformat_xlsxtable extends qformat_default
     {
         return true;
 
-    }
+    }//end provide_import()
 
 
     public function provide_export()
     {
         return true;
 
-    }
+    }//end provide_export()
 
 
     public function mime_type()
     {
         return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
-    }
+    }//end mime_type()
 
 
     public function validate_file(stored_file $file): string
@@ -45,42 +45,46 @@ class qformat_xlsxtable extends qformat_default
 
         return '';
 
-    }
+    }//end validate_file()
+
 
     public function readquestions($data)
     {
-        $allQuestions = [];
+        $qa = [];
         foreach ($data['sheets'] as $sheetIndex => $sheetData) {
-            $sheet = $sheetData['rows'];
-            $images = $sheetData['images'] ?? [];
-            $name         = $this->bottom_value('_name', $sheet);
-            $time       = $this->bottom_value('_time', $sheet);
-            $attempts   = $this->bottom_value('_attempts', $sheet);
-            $password   = $this->bottom_value('_password', $sheet);
-            $fine       = $this->bottom_value('_fine', $sheet);
-            $keys = $this->process_data($sheet);
-            $countQuestions = max(array_map(fn ($item) => count($item), $sheet));
+            $sheet          = $sheetData['rows'];
+            $images         = ($sheetData['images'] ?? []);
+            $name           = $this->bottom_value('_name', $sheet, 'Name not found');
+            $fine           = $this->abs_val($this->bottom_value('_fine', $sheet, '0.1'));
+            $penalty        = $this->abs_val($this->bottom_value('_penalty', $sheet, '0.333'));
+            $fraction       = $this->abs_val($this->bottom_value('_fraction', $sheet, '1.0'));
+            $qtype          = $this->bottom_value('_qtype', $sheet, 'numerical');
+            $keys           = $this->process_data($sheet);
+            $countQuestions = max(array_map(fn ($item) => count($item), $keys));
 
-            for($i = 0; $i < $countQuestions; $i++) {
-                $questiontext = $this->bottom_value('_text', $sheet);
+            debugging("Try import {$countQuestions} questions", DEBUG_DEVELOPER);
+
+            for ($i = 0; $i < $countQuestions; $i++) {
+                $qtext = $this->bottom_value('_text', $sheet, '');
 
                 foreach ($keys as $key => $value) {
-                    if($key === '_answer') {
-                        debugging("Skip _answer to be processed", DEBUG_DEVELOPER);
+                    if ($key === '_answer') {
+                        debugging('Skip _answer to be processed', DEBUG_DEVELOPER);
                         continue;
                     }
-                    $questiontext .= "<p><b>{$key}</b>: {$value[$i]}</p>";
+
+                    $qtext .= "<p><b>{$key}</b>: {$value[$i]}</p>";
                 }
 
                 foreach ($images as $image) {
-                    $questiontext .= "<img title=\"{$image['name']}\" src=\"data:{$image['mimetype']};base64,{$image['base64']}\"/>";
+                    $qtext .= "<img title=\"{$image['name']}\" src=\"data:{$image['mimetype']};base64,{$image['base64']}\"/>";
                 }
 
                 $q               = $this->defaultquestion();
                 $q->id           = $i;
                 $q->name         = $name;
-                $q->questiontext = $questiontext;
-                $q->qtype        = 'shortanswer';
+                $q->questiontext = $qtext;
+                $q->qtype        = $qtype;
                 $q->feedback     = [
                     0 => [
                         'text'   => ' ',
@@ -88,92 +92,120 @@ class qformat_xlsxtable extends qformat_default
                     ],
                 ];
 
-                $q->fraction = [1];
-                $q->answer   = [$keys['_answer'][$i]];
-                $allQuestions[] = $q;
-            }
+                $q->fraction  = [$fraction];
+                $q->answer    = [$keys['_answer'][$i]];
+                $q->tolerance = [$fine];
+                $q->penalty   = $penalty;
+                $qa[]         = $q;
+            }//end for
+        }//end foreach
+
+        return $qa;
+
+    }//end readquestions()
+
+
+    private function abs_val($str)
+    {
+        if (str_contains($str, '%')) {
+            return (floatval($str) / 100);
         }
 
-        return $allQuestions;
-    }
+        return floatval($str);
+
+    }//end abs_val()
 
 
     private function process_data($data)
     {
-        $count = $this->get_counts($data);
+        $count        = $this->get_counts($data);
         $countColumns = $count[0];
-        $countRows = $count[1];
+        $countRows    = $count[1];
 
         $keys = [];
-        for($j = 0; $j < $countColumns; $j++) {
+        for ($j = 0; $j < $countColumns; $j++) {
             $keys[$data[0][$j]] = [];
         }
-        for($i = 1; $i < $countRows; $i++) {
-            for($j = 0; $j < $countColumns; $j++) {
+
+        for ($i = 1; $i < $countRows; $i++) {
+            for ($j = 0; $j < $countColumns; $j++) {
                 $keys[$data[0][$j]][] = $data[$i][$j];
             }
         }
+
         return $keys;
-    }
+
+    }//end process_data()
+
 
     private function get_counts($data)
     {
-        $countRows = 0;
+        $countRows    = 0;
         $countColumns = 0;
 
-        foreach($data[0] as $i => $column) {
-            if(empty($column)) {
+        foreach ($data[0] as $i => $column) {
+            if (empty($column)) {
                 break;
             }
-            $countColumns = $i + 1;
+
+            $countColumns = ($i + 1);
         }
 
-        foreach($data as $i => $row) {
+        foreach ($data as $i => $row) {
             $countEmpty = 0;
-            for($j = 0; $j < $countColumns; $j++) {
+            for ($j = 0; $j < $countColumns; $j++) {
                 $cell = $row[$j];
-                if(empty($cell)) {
+                if (empty($cell)) {
                     $countEmpty++;
                 }
             }
-            if($countEmpty >= $countColumns) {
+
+            if ($countEmpty >= $countColumns) {
                 debugging("Found empty row $countEmpty >= $countColumns, at row $i", DEBUG_DEVELOPER);
                 break;
             }
-            for($j = 0 ; $j < $countColumns; $j++) {
+
+            for ($j = 0; $j < $countColumns; $j++) {
                 $cell = $row[$j];
-                if(!empty($cell)) {
-                    $countRows = $i + 1;
+                if (!empty($cell)) {
+                    $countRows = ($i + 1);
                 }
             }
-        }
+        }//end foreach
 
-        debugging("Columns: " . $countColumns, DEBUG_DEVELOPER);
-        debugging("Rows: " . $countRows, DEBUG_DEVELOPER);
-        return [$countColumns, $countRows];
-    }
+        debugging('Columns: '.$countColumns, DEBUG_DEVELOPER);
+        debugging('Rows: '.$countRows, DEBUG_DEVELOPER);
+        return [
+            $countColumns,
+            $countRows,
+        ];
+
+    }//end get_counts()
 
 
-    private function bottom_value($identifier, $data)
+    private function bottom_value($identifier, $data, $default = '')
     {
         foreach ($data as $i => $row) {
             foreach ($row as $j => $value) {
                 if ($value === $identifier) {
-                    $r = $data[$i + 1][$j];
+                    $r = $data[($i + 1)][$j];
                     debugging("Found $identifier, bottom value: {$r}", DEBUG_DEVELOPER);
                     return $r;
                 }
             }
         }
-        debugging("Not found bottom value", DEBUG_DEVELOPER);
-        return "";
-    }
+
+        debugging('Not found bottom value', DEBUG_DEVELOPER);
+        return $default;
+
+    }//end bottom_value()
+
 
     public function export_file_extension()
     {
         return '.xlsx';
 
-    }
+    }//end export_file_extension()
 
 
     public function writequestion($question)
@@ -181,7 +213,7 @@ class qformat_xlsxtable extends qformat_default
         $this->lessonquestions[] = $question;
         return true;
 
-    }
+    }//end writequestion()
 
 
     public function presave_process($content)
@@ -189,6 +221,8 @@ class qformat_xlsxtable extends qformat_default
         if (count($this->lessonquestions) == 0) {
             throw new moodle_exception('noquestions', 'qformat_xlsxtable');
         }
+
+        debugging('Questions: '.print_r($this->lessonquestions, true), DEBUG_DEVELOPER);
 
         $workbook  = new MoodleExcelWorkbook($this->filename);
         $worksheet = $workbook->add_worksheet('Questions');
@@ -203,7 +237,9 @@ class qformat_xlsxtable extends qformat_default
 
         $workbook->close();
         return true;
-    }
+
+    }//end presave_process()
+
 
     public function readdata($filename)
     {
@@ -211,10 +247,10 @@ class qformat_xlsxtable extends qformat_default
             return false;
         }
 
-        $reader = IOFactory::createReader('Xlsx');
+        $reader      = IOFactory::createReader('Xlsx');
         $spreadsheet = $reader->load($filename);
 
-        $data = [];
+        $data       = [];
         $sheetCount = $spreadsheet->getSheetCount();
         for ($sheetIndex = 0; $sheetIndex < $sheetCount; $sheetIndex++) {
             $worksheet = $spreadsheet->getSheet($sheetIndex);
@@ -224,7 +260,7 @@ class qformat_xlsxtable extends qformat_default
                 $cellIterator->setIterateOnlyExistingCells(false);
                 $rowData = [];
                 foreach ($cellIterator as $cell) {
-                    $value = $cell->getCalculatedValue();
+                    $value     = $cell->getCalculatedValue();
                     $rowData[] = $value;
                 }
 
@@ -239,18 +275,22 @@ class qformat_xlsxtable extends qformat_default
                 $imageData['coordinates'] = $drawing->getCoordinates();
                 $imageData['name']        = $drawing->getName();
                 $imageData['base64']      = base64_encode(file_get_contents($imagePath));
-                $mimeType = 'image/png';
+                $mimeType                 = 'image/png';
                 if (function_exists('mime_content_type')) {
                     $mimeType = mime_content_type($imagePath);
                 }
+
                 $imageData['mimetype'] = $mimeType;
 
                 $sheetData['images'][] = $imageData;
             }
 
             $data['sheets'][] = $sheetData;
-        }
+        }//end for
 
         return $data;
-    }
-}
+
+    }//end readdata()
+
+
+}//end class
