@@ -204,7 +204,6 @@ class qformat_xlsxtable extends qformat_default
     public function export_file_extension()
     {
         return '.xlsx';
-
     }//end export_file_extension()
 
 
@@ -212,7 +211,6 @@ class qformat_xlsxtable extends qformat_default
     {
         $this->lessonquestions[] = $question;
         return true;
-
     }//end writequestion()
 
 
@@ -221,8 +219,6 @@ class qformat_xlsxtable extends qformat_default
         if (count($this->lessonquestions) == 0) {
             throw new moodle_exception('noquestions', 'qformat_xlsxtable');
         }
-
-        debugging('Questions: '.print_r($this->lessonquestions, true), DEBUG_DEVELOPER);
 
         $workbook  = new MoodleExcelWorkbook($this->filename);
         $worksheet = $workbook->add_worksheet('Questions');
