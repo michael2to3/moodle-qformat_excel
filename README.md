@@ -65,3 +65,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 
 1. **Download the Plugin**: Clone this repository or download the ZIP file.
     ```
+    git clone https://github.com/michael2to3/moodle-qformat_xlsx.git
