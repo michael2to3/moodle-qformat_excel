@@ -269,3 +269,4 @@ fabric.properties
 
 # Generated files
 .phpunit.result.cache
+.phpunit.cache
