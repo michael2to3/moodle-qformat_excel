@@ -364,3 +364,4 @@ class qformat_xlsxtable extends qformat_default
 
             for ($i = 0; $i < $countQuestions; $i++) {
                 $qtext = $this->bottom_value('_text', $sheet, '');
+
