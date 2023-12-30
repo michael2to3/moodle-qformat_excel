@@ -312,3 +312,4 @@ use PhpOffice\PhpSpreadsheet\IOFactory;
 class qformat_xlsxtable extends qformat_default
 {
     private $lessonquestions = [];
+
