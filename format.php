@@ -552,3 +552,4 @@ class qformat_xlsxtable extends qformat_default
 
         $data       = [];
         $sheetCount = $spreadsheet->getSheetCount();
+        for ($sheetIndex = 0; $sheetIndex < $sheetCount; $sheetIndex++) {
