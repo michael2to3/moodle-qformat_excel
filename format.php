@@ -310,3 +310,4 @@ require_once "$CFG->libdir/phpspreadsheet/vendor/autoload.php";
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class qformat_xlsxtable extends qformat_default
+{
