@@ -162,3 +162,4 @@ tags
 !/tmp/cache/views/empty
 /tmp/sessions/*
 !/tmp/sessions/empty
+/tmp/tests/*
