@@ -513,3 +513,4 @@ class qformat_xlsxtable extends qformat_default
     public function writequestion($question)
     {
         $this->lessonquestions[] = $question;
+        return true;
