@@ -76,3 +76,4 @@ defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
 require_once($CFG->libdir . '/questionlib.php');
+require_once($CFG->dirroot . '/question/format/xml/format.php');
