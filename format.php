@@ -296,3 +296,4 @@ class qformat_xlsxtable extends qformat_default
 
 
 }//end class
+<?php
