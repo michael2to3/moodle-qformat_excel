@@ -70,3 +70,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 2. **Install the Plugin on Moodle**:
    - Navigate to your Moodle installation's `admin/tool/installaddon/index.php` page.
    - Upload the downloaded plugin ZIP file.
+   - Follow the on-screen instructions to complete the installation.
