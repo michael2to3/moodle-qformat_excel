@@ -242,3 +242,4 @@ atlassian-ide-plugin.xml
 # SonarLint plugin
 .idea/sonarlint/
 
+# Crashlytics plugin (for Android Studio and IntelliJ)
