@@ -69,3 +69,4 @@ $string['transformationfailed'] = 'XSLT transformation failed (<b>{$a}</b>)';
 $string['xlsxtable'] = 'Microsoft XLSX table format';
 $string['xlsxtable_help'] = 'This is a front-end for converting Microsoft XLSX files into Moodle Question XML format for import, and converting Moodle Question XML format into an enhanced XHTML format for exporting into a format suitable for editing in Microsoft XLSX.';
 $string['xmlnotsupported'] = 'Files in XML format not supported: <b>{$a}</b>';
+$string['xsltunavailable'] = 'You need the XSLT library installed in PHP to save this XLSX file';
