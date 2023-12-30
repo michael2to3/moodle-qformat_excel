@@ -418,3 +418,4 @@ class qformat_xlsxtable extends qformat_default
     }//end abs_val()
 
 
+    private function process_data($data)
