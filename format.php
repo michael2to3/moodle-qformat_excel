@@ -546,3 +546,4 @@ class qformat_xlsxtable extends qformat_default
         if ($filename === null || !preg_match('#\.xlsx$#i', $filename)) {
             return false;
         }
+
