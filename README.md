@@ -73,3 +73,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
    - Follow the on-screen instructions to complete the installation.
 
 3. **Verify Installation**:
+   - After installation, 'moodle-qformat_xlsx' should be listed under the Plugins section in Moodle.
