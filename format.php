@@ -542,3 +542,4 @@ class qformat_xlsxtable extends qformat_default
 
 
     public function readdata($filename)
+    {
