@@ -85,3 +85,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 4. Click on 'Import' to complete the process.
 
 ### Exporting to XLSX
+
