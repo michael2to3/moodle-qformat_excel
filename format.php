@@ -504,3 +504,4 @@ class qformat_xlsxtable extends qformat_default
 
 
     public function export_file_extension()
+    {
