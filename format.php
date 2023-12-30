@@ -380,3 +380,4 @@ class qformat_xlsxtable extends qformat_default
 
                 $q               = $this->defaultquestion();
                 $q->id           = $i;
+                $q->name         = $name;
