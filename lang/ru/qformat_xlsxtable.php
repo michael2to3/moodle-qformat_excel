@@ -61,3 +61,4 @@ $string['preview_question_not_found'] = 'Предварительный прос
 $string['privacy:metadata'] = 'Плагин формата вопросов XLSXTable не хранит личных данных.';
 $string['stylesheetunavailable'] = 'Таблица стилей XSLT <b>{$a}</b> недоступна';
 $string['transformationfailed'] = 'Преобразование XSLT не удалось (<b>{$a}</b>)';
+$string['xlsxtable'] = 'Формат таблицы Microsoft XLSX 2008';
