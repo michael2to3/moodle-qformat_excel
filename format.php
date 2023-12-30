@@ -444,3 +444,4 @@ class qformat_xlsxtable extends qformat_default
     {
         $countRows    = 0;
         $countColumns = 0;
+
