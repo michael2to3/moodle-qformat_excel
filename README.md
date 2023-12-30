@@ -72,3 +72,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
    - Upload the downloaded plugin ZIP file.
    - Follow the on-screen instructions to complete the installation.
 
+3. **Verify Installation**:
