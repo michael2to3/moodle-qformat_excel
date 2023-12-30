@@ -515,3 +515,4 @@ class qformat_xlsxtable extends qformat_default
         $this->lessonquestions[] = $question;
         return true;
 
+    }//end writequestion()
