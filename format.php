@@ -448,3 +448,4 @@ class qformat_xlsxtable extends qformat_default
         foreach ($data[0] as $i => $column) {
             if (empty($column)) {
                 break;
+            }
