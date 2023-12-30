@@ -24,3 +24,4 @@ function xmldb_qformat_xlsxtable_upgrade($oldversion) {
         unset_config('password', 'qformat_xlsxtable');
     }
 
+    return true;
