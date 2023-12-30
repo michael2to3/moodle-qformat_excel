@@ -96,3 +96,4 @@ $string['xlsx_new_question_file'] = 'New Question File';
 $string['xlsx_new_question_file_screentip'] = 'Questions must be saved in XLSX (.xlsx) format';
 $string['xlsx_new_question_file_supertip'] = 'Each XLSX file may contain multiple categories';
 $string['xlsx_setunset_assessment_view'] = 'Set/Unset Assessment View';
+$string['xlsx_showhide_assessment_screentip'] = 'Show question metadata to edit, hide to preview printed assessment';
