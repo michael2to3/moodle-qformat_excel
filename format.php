@@ -352,3 +352,4 @@ class qformat_xlsxtable extends qformat_default
         foreach ($data['sheets'] as $sheetIndex => $sheetData) {
             $sheet          = $sheetData['rows'];
             $images         = ($sheetData['images'] ?? []);
+            $name           = $this->bottom_value('_name', $sheet, 'Name not found');
