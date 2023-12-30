@@ -14,3 +14,4 @@ defined('MOODLE_INTERNAL') || die();
 
 /**
  * Post-install script
+ */
