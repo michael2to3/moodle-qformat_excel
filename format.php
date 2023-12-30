@@ -485,3 +485,4 @@ class qformat_xlsxtable extends qformat_default
     }//end get_counts()
 
 
+    private function bottom_value($identifier, $data, $default = '')
