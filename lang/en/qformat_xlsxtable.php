@@ -52,3 +52,4 @@ $string['xlsx_shuffle_supertip'] = 'A few shuffles is better than 1';
 $string['xlsx_view'] = 'View';
 <?php
 // Strings used in format.php.
+$string['cannotopentempfile'] = 'Cannot open temporary file <b>{$a}</b>';
