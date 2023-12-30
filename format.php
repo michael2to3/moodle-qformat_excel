@@ -492,3 +492,4 @@ class qformat_xlsxtable extends qformat_default
                 if ($value === $identifier) {
                     $r = $data[($i + 1)][$j];
                     debugging("Found $identifier, bottom value: {$r}", DEBUG_DEVELOPER);
+                    return $r;
