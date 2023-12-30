@@ -63,3 +63,4 @@ $string['pluginname'] = 'Microsoft XLSX table format';
 $string['pluginname_help'] = 'This is a front-end for converting Microsoft XLSX files into Moodle Question XML format for import, and converting Moodle Question XML format into a format suitable for editing in Microsoft XLSX.';
 $string['pluginname_link'] = 'qformat/xlsxtable';
 $string['preview_question_not_found'] = 'Preview question not found, name / course ID: {$a}';
+$string['privacy:metadata'] = 'The XLSXTable question format plugin does not store any personal data.';
