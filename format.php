@@ -465,3 +465,4 @@ class qformat_xlsxtable extends qformat_default
             if ($countEmpty >= $countColumns) {
                 debugging("Found empty row $countEmpty >= $countColumns, at row $i", DEBUG_DEVELOPER);
                 break;
+            }
