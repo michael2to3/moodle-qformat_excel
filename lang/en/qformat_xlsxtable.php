@@ -82,3 +82,4 @@ $string['interface_language_mismatch'] = 'No questions imported because the lang
 $string['multichoice_instructions'] = 'Allows the selection of a single or multiple responses from a pre-defined list.';
 $string['truefalse_instructions'] = 'Set grade \'100\' to the correct answer.';
 $string['unsupported_instructions'] = 'Importing this question type is not supported.';
+
