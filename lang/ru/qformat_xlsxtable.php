@@ -47,3 +47,4 @@ $string['xlsx_shuffle_screentip'] = 'Перемешать ответы на во
 $string['xlsx_shuffle_supertip'] = 'Несколько перемешиваний лучше, чем одно';
 $string['xlsx_view'] = 'Просмотр';
 <?php
+$string['cannotopentempfile'] = 'Не удается открыть временный файл <b>{$a}</b>';
