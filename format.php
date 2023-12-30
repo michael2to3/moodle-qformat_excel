@@ -440,3 +440,4 @@ class qformat_xlsxtable extends qformat_default
     }//end process_data()
 
 
+    private function get_counts($data)
