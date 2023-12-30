@@ -434,3 +434,4 @@ class qformat_xlsxtable extends qformat_default
                 $keys[$data[0][$j]][] = $data[$i][$j];
             }
         }
+
