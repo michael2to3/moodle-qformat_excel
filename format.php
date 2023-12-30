@@ -387,3 +387,4 @@ class qformat_xlsxtable extends qformat_default
                 ];
                 $q->questiontext = $qtext;
                 $q->qtype        = $qtype;
+                $q->feedback     = [
