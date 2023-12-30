@@ -197,3 +197,4 @@ tags
 .idea/**/dataSources.ids
 .idea/**/dataSources.local.xml
 .idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
