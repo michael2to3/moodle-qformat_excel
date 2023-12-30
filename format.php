@@ -556,3 +556,4 @@ class qformat_xlsxtable extends qformat_default
             $worksheet = $spreadsheet->getSheet($sheetIndex);
             $sheetData = ['name' => $worksheet->getTitle()];
             foreach ($worksheet->getRowIterator() as $row) {
+                $cellIterator = $row->getCellIterator();
