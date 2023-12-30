@@ -63,3 +63,4 @@ $string['stylesheetunavailable'] = 'Таблица стилей XSLT <b>{$a}</b>
 $string['transformationfailed'] = 'Преобразование XSLT не удалось (<b>{$a}</b>)';
 $string['xlsxtable'] = 'Формат таблицы Microsoft XLSX 2008';
 $string['xlsxtable_help'] = 'Это интерфейс для конвертации файлов Microsoft XLSX в формат XML вопросов Moodle для импорта, а также для конвертации формата XML вопросов Moodle в улучшенный формат XHTML для экспорта в формат, подходящий для редактирования в Microsoft XLSX.';
+$string['xmlnotsupported'] = 'Файлы в формате XML не поддерживаются: <b>{$a}</b>';
