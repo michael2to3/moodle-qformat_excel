@@ -335,3 +335,4 @@ class qformat_xlsxtable extends qformat_default
     }//end mime_type()
 
 
+    public function validate_file(stored_file $file): string
