@@ -471,3 +471,4 @@ class qformat_xlsxtable extends qformat_default
                 $cell = $row[$j];
                 if (!empty($cell)) {
                     $countRows = ($i + 1);
+                }
