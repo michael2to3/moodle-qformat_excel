@@ -91,3 +91,4 @@ $string['xlsx_setunset_assessment_view'] = 'Установить/Снять ре
 $string['xlsx_showhide_assessment_screentip'] = 'Показать метаданные вопроса для редактирования, скрыть для предварительного просмотра напечатанной оценки';
 $string['xlsx_showhide_assessment_supertip'] = 'Показывает или скрывает скрытый текст';
 $string['xlsx_showhide_assessment_view'] = 'Показать/Скрыть режим оценки';
+$string['xlsx_shuffle_screentip'] = 'Перемешать ответы на вопросы с множественным выбором/Правда-Ложь/Несколько ответов';
