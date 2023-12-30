@@ -467,3 +467,4 @@ class qformat_xlsxtable extends qformat_default
                 break;
             }
 
+            for ($j = 0; $j < $countColumns; $j++) {
