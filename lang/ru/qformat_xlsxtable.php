@@ -93,3 +93,4 @@ $string['xlsx_showhide_assessment_supertip'] = 'Показывает или ск
 $string['xlsx_showhide_assessment_view'] = 'Показать/Скрыть режим оценки';
 $string['xlsx_shuffle_screentip'] = 'Перемешать ответы на вопросы с множественным выбором/Правда-Ложь/Несколько ответов';
 $string['xlsx_shuffle_supertip'] = 'Несколько перемешиваний лучше, чем одно';
+$string['xlsx_view'] = 'Просмотр';
