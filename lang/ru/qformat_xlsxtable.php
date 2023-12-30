@@ -56,3 +56,4 @@ $string['htmlnotsupported'] = 'Файлы в формате HTML не подде
 $string['noquestions'] = 'Нет вопросов для экспорта';
 $string['pluginname'] = 'Формат таблицы Microsoft XLSX 2008';
 $string['pluginname_help'] = 'Это интерфейс для конвертации файлов Microsoft XLSX в формат XML вопросов Moodle для импорта, а также для конвертации формата XML вопросов Moodle в формат, подходящий для редактирования в Microsoft XLSX.';
+$string['pluginname_link'] = 'qformat/xlsxtable';
