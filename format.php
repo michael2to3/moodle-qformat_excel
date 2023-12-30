@@ -386,3 +386,4 @@ class qformat_xlsxtable extends qformat_default
                     $sheetData['name'],
                 ];
                 $q->questiontext = $qtext;
+                $q->qtype        = $qtype;
