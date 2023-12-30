@@ -64,3 +64,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 ## Installation
 
 1. **Download the Plugin**: Clone this repository or download the ZIP file.
+    ```
