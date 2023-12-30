@@ -49,3 +49,4 @@ $string['xlsx_view'] = 'Просмотр';
 <?php
 $string['cannotopentempfile'] = 'Не удается открыть временный файл <b>{$a}</b>';
 $string['cannotreadzippedfile'] = 'Не удается прочитать сжатый файл <b>{$a}</b>';
+$string['cannotwritetotempfile'] = 'Не удается записать во временный файл <b>{$a}</b>';
