@@ -554,3 +554,4 @@ class qformat_xlsxtable extends qformat_default
         $sheetCount = $spreadsheet->getSheetCount();
         for ($sheetIndex = 0; $sheetIndex < $sheetCount; $sheetIndex++) {
             $worksheet = $spreadsheet->getSheet($sheetIndex);
+            $sheetData = ['name' => $worksheet->getTitle()];
