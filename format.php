@@ -321,3 +321,4 @@ class qformat_xlsxtable extends qformat_default
     }//end provide_import()
 
 
+    public function provide_export()
