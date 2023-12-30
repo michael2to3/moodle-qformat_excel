@@ -219,3 +219,4 @@ tags
 # *.ipr
 
 # CMake
+cmake-build-*/
