@@ -56,3 +56,4 @@ class qformat_wordtable_export_test extends question_testcase {
 // (at your option) any later version.
 //
 // Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
