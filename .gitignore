@@ -260,3 +260,4 @@ fabric.properties
 
 .idea/*
 
+!.idea/codeStyles
