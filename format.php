@@ -494,3 +494,4 @@ class qformat_xlsxtable extends qformat_default
                     debugging("Found $identifier, bottom value: {$r}", DEBUG_DEVELOPER);
                     return $r;
                 }
+            }
