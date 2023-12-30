@@ -88,3 +88,4 @@ $string['xlsx_new_question_file'] = 'Новый файл вопроса';
 $string['xlsx_new_question_file_screentip'] = 'Вопросы должны быть сохранены в формате XLSX (.xlsx)';
 $string['xlsx_new_question_file_supertip'] = 'Каждый файл XLSX может содержать несколько категорий';
 $string['xlsx_setunset_assessment_view'] = 'Установить/Снять режим оценки';
+$string['xlsx_showhide_assessment_screentip'] = 'Показать метаданные вопроса для редактирования, скрыть для предварительного просмотра напечатанной оценки';
