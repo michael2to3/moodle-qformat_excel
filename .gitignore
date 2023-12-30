@@ -149,3 +149,4 @@ tags
 # Persistent undo
 [._]*.un~
 ### CakePHP ###
+# CakePHP 3
