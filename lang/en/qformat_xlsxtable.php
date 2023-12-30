@@ -72,3 +72,4 @@ $string['xmlnotsupported'] = 'Files in XML format not supported: <b>{$a}</b>';
 $string['xsltunavailable'] = 'You need the XSLT library installed in PHP to save this XLSX file';
 
 // Strings used in XSLT when converting questions into XLSX format.
+$string['cloze_distractor_column_label'] = 'Distractors';
