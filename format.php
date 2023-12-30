@@ -476,3 +476,4 @@ class qformat_xlsxtable extends qformat_default
         }//end foreach
 
         debugging('Columns: '.$countColumns, DEBUG_DEVELOPER);
+        debugging('Rows: '.$countRows, DEBUG_DEVELOPER);
