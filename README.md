@@ -83,3 +83,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 2. Choose the XLSX file you want to import.
 3. Map the columns in your XLSX file to the corresponding fields in Moodle.
 4. Click on 'Import' to complete the process.
+
