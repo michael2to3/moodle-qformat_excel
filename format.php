@@ -558,3 +558,4 @@ class qformat_xlsxtable extends qformat_default
             foreach ($worksheet->getRowIterator() as $row) {
                 $cellIterator = $row->getCellIterator();
                 $cellIterator->setIterateOnlyExistingCells(false);
+                $rowData = [];
