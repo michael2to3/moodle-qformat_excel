@@ -189,3 +189,4 @@ tags
 # AWS User-specific
 .idea/**/aws.xml
 
+# Generated files
