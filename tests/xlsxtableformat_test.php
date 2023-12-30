@@ -82,3 +82,4 @@ require_once($CFG->dirroot . '/question/engine/tests/helpers.php');
 require_once($CFG->dirroot . '/question/format/xml/tests/xmlformat_test.php');
 require_once($CFG->dirroot . '/tag/lib.php');
 
+/**
