@@ -202,3 +202,4 @@ tags
 .idea/**/dbnavigator.xml
 
 # Gradle
+.idea/**/gradle.xml
