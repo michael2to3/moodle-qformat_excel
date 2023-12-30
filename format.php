@@ -521,3 +521,4 @@ class qformat_xlsxtable extends qformat_default
     public function presave_process($content)
     {
         if (count($this->lessonquestions) == 0) {
+            throw new moodle_exception('noquestions', 'qformat_xlsxtable');
