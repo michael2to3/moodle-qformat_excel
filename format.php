@@ -341,3 +341,4 @@ class qformat_xlsxtable extends qformat_default
             return get_string('errorfilenamemustbexlsx', 'qformat_xlsxtable');
         }
 
+        return '';
