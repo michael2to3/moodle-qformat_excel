@@ -503,3 +503,4 @@ class qformat_xlsxtable extends qformat_default
     }//end bottom_value()
 
 
+    public function export_file_extension()
