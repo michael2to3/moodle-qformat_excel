@@ -314,3 +314,4 @@ class qformat_xlsxtable extends qformat_default
     private $lessonquestions = [];
 
 
+    public function provide_import()
