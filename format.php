@@ -402,3 +402,4 @@ class qformat_xlsxtable extends qformat_default
             }//end for
         }//end foreach
 
+        return $qa;
