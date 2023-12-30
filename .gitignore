@@ -159,3 +159,4 @@ tags
 /tmp/cache/persistent/*
 !/tmp/cache/persistent/empty
 /tmp/cache/views/*
+!/tmp/cache/views/empty
