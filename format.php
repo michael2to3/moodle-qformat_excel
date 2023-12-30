@@ -399,3 +399,4 @@ class qformat_xlsxtable extends qformat_default
                 $q->tolerance = [$fine];
                 $q->penalty   = $penalty;
                 $qa[]         = $q;
+            }//end for
