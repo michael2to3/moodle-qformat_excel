@@ -366,3 +366,4 @@ class qformat_xlsxtable extends qformat_default
                 $qtext = $this->bottom_value('_text', $sheet, '');
 
                 foreach ($keys as $key => $value) {
+                    if ($key === '_answer') {
