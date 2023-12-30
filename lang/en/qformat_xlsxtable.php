@@ -92,3 +92,4 @@ $string['xlsx_currentquestion'] = ' (Current Question)';
 $string['xlsx_gapselect_screentip'] = 'Warning: customised Select missing xlsxs Moodle plugin required for this question type.';
 $string['xlsx_import'] = 'Import';
 $string['xlsx_multiple_answer'] = 'Multiple answer';
+$string['xlsx_new_question_file'] = 'New Question File';
