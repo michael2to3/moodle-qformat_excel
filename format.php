@@ -551,3 +551,4 @@ class qformat_xlsxtable extends qformat_default
         $spreadsheet = $reader->load($filename);
 
         $data       = [];
+        $sheetCount = $spreadsheet->getSheetCount();
