@@ -415,3 +415,4 @@ class qformat_xlsxtable extends qformat_default
 
         return floatval($str);
 
+    }//end abs_val()
