@@ -475,3 +475,4 @@ class qformat_xlsxtable extends qformat_default
             }
         }//end foreach
 
+        debugging('Columns: '.$countColumns, DEBUG_DEVELOPER);
