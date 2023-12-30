@@ -92,3 +92,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 4. Click on 'Export' to download the XLSX file.
 
 ## Configuration
+
