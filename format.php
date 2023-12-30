@@ -450,3 +450,4 @@ class qformat_xlsxtable extends qformat_default
                 break;
             }
 
+            $countColumns = ($i + 1);
