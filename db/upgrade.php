@@ -25,3 +25,4 @@ function xmldb_qformat_xlsxtable_upgrade($oldversion) {
     }
 
     return true;
+}
