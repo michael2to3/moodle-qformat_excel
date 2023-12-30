@@ -173,3 +173,4 @@ tags
 /app/tmp/*
 /app/Config/core.php
 /app/Config/database.php
+/vendors/*
