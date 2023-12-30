@@ -9,3 +9,4 @@ $plugin->requires = 2018051700;  // Requires Moodle 3.5 or later.
 <?php
 defined('MOODLE_INTERNAL') || die();
 
+$plugin->version   = 2023112500;
