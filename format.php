@@ -353,3 +353,4 @@ class qformat_xlsxtable extends qformat_default
             $sheet          = $sheetData['rows'];
             $images         = ($sheetData['images'] ?? []);
             $name           = $this->bottom_value('_name', $sheet, 'Name not found');
+            $fine           = $this->abs_val($this->bottom_value('_fine', $sheet, '0.1'));
