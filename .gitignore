@@ -171,3 +171,4 @@ tags
 # CakePHP 2
 
 /app/tmp/*
+/app/Config/core.php
