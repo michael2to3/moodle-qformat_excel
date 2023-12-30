@@ -170,3 +170,4 @@ tags
 
 # CakePHP 2
 
+/app/tmp/*
