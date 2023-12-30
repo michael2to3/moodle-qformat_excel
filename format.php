@@ -360,3 +360,4 @@ class qformat_xlsxtable extends qformat_default
             $keys           = $this->process_data($sheet);
             $countQuestions = max(array_map(fn ($item) => count($item), $keys));
 
+            debugging("Try import {$countQuestions} questions", DEBUG_DEVELOPER);
