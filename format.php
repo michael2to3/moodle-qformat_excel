@@ -424,3 +424,4 @@ class qformat_xlsxtable extends qformat_default
         $countColumns = $count[0];
         $countRows    = $count[1];
 
+        $keys = [];
