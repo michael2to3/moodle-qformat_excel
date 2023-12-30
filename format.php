@@ -458,3 +458,4 @@ class qformat_xlsxtable extends qformat_default
             for ($j = 0; $j < $countColumns; $j++) {
                 $cell = $row[$j];
                 if (empty($cell)) {
+                    $countEmpty++;
