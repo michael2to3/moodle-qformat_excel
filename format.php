@@ -355,3 +355,4 @@ class qformat_xlsxtable extends qformat_default
             $name           = $this->bottom_value('_name', $sheet, 'Name not found');
             $fine           = $this->abs_val($this->bottom_value('_fine', $sheet, '0.1'));
             $penalty        = $this->abs_val($this->bottom_value('_penalty', $sheet, '0.333'));
+            $fraction       = $this->abs_val($this->bottom_value('_fraction', $sheet, '1.0'));
