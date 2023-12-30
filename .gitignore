@@ -190,3 +190,4 @@ tags
 .idea/**/aws.xml
 
 # Generated files
+.idea/**/contentModel.xml
