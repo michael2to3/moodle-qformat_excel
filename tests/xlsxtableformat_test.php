@@ -89,3 +89,4 @@ require_once($CFG->dirroot . '/tag/lib.php');
  * the qformat_wordtable::presave_process method, and then compared to the expected output.
  * @copyright  2016 Eoin Campbell
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @group qformat_wordtable
