@@ -299,3 +299,4 @@ class qformat_xlsxtable extends qformat_default
 <?php
 
 defined('MOODLE_INTERNAL') || die();
+
