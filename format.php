@@ -417,3 +417,4 @@ class qformat_xlsxtable extends qformat_default
 
     }//end abs_val()
 
+
