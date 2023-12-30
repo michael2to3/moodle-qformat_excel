@@ -543,3 +543,4 @@ class qformat_xlsxtable extends qformat_default
 
     public function readdata($filename)
     {
+        if ($filename === null || !preg_match('#\.xlsx$#i', $filename)) {
