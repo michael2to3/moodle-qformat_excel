@@ -484,3 +484,4 @@ class qformat_xlsxtable extends qformat_default
 
     }//end get_counts()
 
+
