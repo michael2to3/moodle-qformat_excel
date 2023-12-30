@@ -87,3 +87,4 @@ $string['unsupported_instructions'] = 'Importing this question type is not suppo
 // These templates are available at http://www.moodle2xlsx.net/.
 $string['xlsx_about_moodle2xlsx'] = 'About Moodle2XLSX';
 $string['xlsx_about_moodle2xlsx_screentip'] = 'About the Moodle2XLSX XLSX templates and Moodle plug-in';
+$string['xlsx_addcategory_supertip'] = 'Category names use the Heading 1 style';
