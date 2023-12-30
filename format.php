@@ -385,3 +385,4 @@ class qformat_xlsxtable extends qformat_default
                     'xlsxtable',
                     $sheetData['name'],
                 ];
+                $q->questiontext = $qtext;
