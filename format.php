@@ -549,3 +549,4 @@ class qformat_xlsxtable extends qformat_default
 
         $reader      = IOFactory::createReader('Xlsx');
         $spreadsheet = $reader->load($filename);
+
