@@ -412,3 +412,4 @@ class qformat_xlsxtable extends qformat_default
         if (str_contains($str, '%')) {
             return (floatval($str) / 100);
         }
+
