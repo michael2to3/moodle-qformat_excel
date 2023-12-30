@@ -56,3 +56,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 
 ## Features
 
+- **Import XLSX**: Easily import data from XLSX files into Moodle.
