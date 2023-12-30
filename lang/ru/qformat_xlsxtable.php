@@ -76,3 +76,4 @@ $string['interface_language_mismatch'] = 'Вопросы не импортиро
 $string['multichoice_instructions'] = 'Позволяет выбор одного или нескольких ответов из предопределенного списка.';
 $string['truefalse_instructions'] = 'Установите оценку "100" для правильного ответа.';
 $string['unsupported_instructions'] = 'Импорт этого типа вопроса не поддерживается.';
+
