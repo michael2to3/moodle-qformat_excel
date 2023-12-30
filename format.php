@@ -560,3 +560,4 @@ class qformat_xlsxtable extends qformat_default
                 $cellIterator->setIterateOnlyExistingCells(false);
                 $rowData = [];
                 foreach ($cellIterator as $cell) {
+                    $value     = $cell->getCalculatedValue();
