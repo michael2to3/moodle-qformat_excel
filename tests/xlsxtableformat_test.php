@@ -86,3 +86,4 @@ require_once($CFG->dirroot . '/tag/lib.php');
  * Unit tests for exporting questions into Word (via XML).
  *
  * Each test has a question in XML format, which is converted to HTML using
+ * the qformat_wordtable::presave_process method, and then compared to the expected output.
