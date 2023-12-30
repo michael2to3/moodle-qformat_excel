@@ -236,3 +236,4 @@ out/
 # JIRA plugin
 atlassian-ide-plugin.xml
 
+# Cursive Clojure plugin
