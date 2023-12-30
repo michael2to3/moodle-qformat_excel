@@ -192,3 +192,4 @@ tags
 # Generated files
 .idea/**/contentModel.xml
 
+# Sensitive or high-churn files
