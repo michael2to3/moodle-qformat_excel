@@ -91,3 +91,4 @@ require_once($CFG->dirroot . '/tag/lib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  * @group qformat_wordtable
  */
+class qformat_wordtable_export_test extends question_testcase {
