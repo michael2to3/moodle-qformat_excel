@@ -80,3 +80,4 @@ $string['description_instructions'] = 'This is not actually a question. Instead 
 $string['essay_instructions'] = 'Allows a response of a few sentences or paragraphs. This must then be graded manually.';
 $string['interface_language_mismatch'] = 'No questions imported because the language of the labels in the XLSX file does not match your current Moodle interface language.';
 $string['multichoice_instructions'] = 'Allows the selection of a single or multiple responses from a pre-defined list.';
+$string['truefalse_instructions'] = 'Set grade \'100\' to the correct answer.';
