@@ -389,3 +389,4 @@ class qformat_xlsxtable extends qformat_default
                 $q->qtype        = $qtype;
                 $q->feedback     = [
                     0 => [
+                        'text'   => ' ',
