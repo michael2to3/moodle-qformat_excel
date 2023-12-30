@@ -71,3 +71,4 @@ $string['xlsxtable_help'] = 'This is a front-end for converting Microsoft XLSX f
 $string['xmlnotsupported'] = 'Files in XML format not supported: <b>{$a}</b>';
 $string['xsltunavailable'] = 'You need the XSLT library installed in PHP to save this XLSX file';
 
+// Strings used in XSLT when converting questions into XLSX format.
