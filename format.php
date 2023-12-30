@@ -350,3 +350,4 @@ class qformat_xlsxtable extends qformat_default
     {
         $qa = [];
         foreach ($data['sheets'] as $sheetIndex => $sheetData) {
+            $sheet          = $sheetData['rows'];
