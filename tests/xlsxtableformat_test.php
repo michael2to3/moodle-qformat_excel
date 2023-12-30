@@ -64,3 +64,4 @@ class qformat_wordtable_export_test extends question_testcase {
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Unit tests for the Moodle WordTable format.
