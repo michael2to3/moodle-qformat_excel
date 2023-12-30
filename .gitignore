@@ -228,3 +228,4 @@ cmake-build-*/
 *.iws
 
 # IntelliJ
+out/
