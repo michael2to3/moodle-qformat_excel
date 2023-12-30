@@ -571,3 +571,4 @@ class qformat_xlsxtable extends qformat_default
             foreach ($drawings as $drawing) {
                 $imageData                = [];
                 $imagePath                = $drawing->getPath();
+                $imageData['path']        = $imagePath;
