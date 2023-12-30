@@ -60,3 +60,4 @@ $string['htmldocnotsupported'] = 'Incorrect XLSX format: please use <i>File>Save
 $string['htmlnotsupported'] = 'Files in HTML format not supported: <b>{$a}</b>';
 $string['noquestions'] = 'No questions to export';
 $string['pluginname'] = 'Microsoft XLSX table format';
+$string['pluginname_help'] = 'This is a front-end for converting Microsoft XLSX files into Moodle Question XML format for import, and converting Moodle Question XML format into a format suitable for editing in Microsoft XLSX.';
