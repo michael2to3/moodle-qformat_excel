@@ -523,3 +523,4 @@ class qformat_xlsxtable extends qformat_default
         if (count($this->lessonquestions) == 0) {
             throw new moodle_exception('noquestions', 'qformat_xlsxtable');
         }
+
