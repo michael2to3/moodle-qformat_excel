@@ -489,3 +489,4 @@ class qformat_xlsxtable extends qformat_default
     {
         foreach ($data as $i => $row) {
             foreach ($row as $j => $value) {
+                if ($value === $identifier) {
