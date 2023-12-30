@@ -538,3 +538,4 @@ class qformat_xlsxtable extends qformat_default
         $workbook->close();
         return true;
 
+    }//end presave_process()
