@@ -56,3 +56,4 @@ $string['cannotopentempfile'] = 'Cannot open temporary file <b>{$a}</b>';
 $string['cannotreadzippedfile'] = 'Cannot read Zipped file <b>{$a}</b>';
 $string['cannotwritetotempfile'] = 'Cannot write to temporary file <b>{$a}</b>';
 $string['docnotsupported'] = 'Files in XLSX 2003 format not supported: <b>{$a}</b>, use Moodle2XLSX 3.x instead';
+$string['htmldocnotsupported'] = 'Incorrect XLSX format: please use <i>File>Save As...</i> to save <b>{$a}</b> in native XLSX 2010 (.xlsx) format and import again';
