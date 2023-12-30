@@ -66,3 +66,4 @@ $string['xlsxtable_help'] = 'Это интерфейс для конвертац
 $string['xmlnotsupported'] = 'Файлы в формате XML не поддерживаются: <b>{$a}</b>';
 $string['xsltunavailable'] = 'Вам нужна библиотека XSLT, установленная в PHP, чтобы сохранить этот файл XLSX';
 
+$string['cloze_distractor_column_label'] = 'Отвлекающие факторы';
