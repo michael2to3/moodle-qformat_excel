@@ -454,3 +454,4 @@ class qformat_xlsxtable extends qformat_default
         }
 
         foreach ($data as $i => $row) {
+            $countEmpty = 0;
