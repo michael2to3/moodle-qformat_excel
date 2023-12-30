@@ -284,3 +284,4 @@ fabric.properties
 !*.svg  # comment out if you don't need vector files
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
