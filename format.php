@@ -359,3 +359,4 @@ class qformat_xlsxtable extends qformat_default
             $qtype          = $this->bottom_value('_qtype', $sheet, 'numerical');
             $keys           = $this->process_data($sheet);
             $countQuestions = max(array_map(fn ($item) => count($item), $keys));
+
