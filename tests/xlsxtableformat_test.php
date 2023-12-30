@@ -84,3 +84,4 @@ require_once($CFG->dirroot . '/tag/lib.php');
 
 /**
  * Unit tests for exporting questions into Word (via XML).
+ *
