@@ -378,3 +378,4 @@ class qformat_xlsxtable extends qformat_default
                     $qtext .= "<img title=\"{$image['name']}\" src=\"data:{$image['mimetype']};base64,{$image['base64']}\"/>";
                 }
 
+                $q               = $this->defaultquestion();
