@@ -486,3 +486,4 @@ class qformat_xlsxtable extends qformat_default
 
 
     private function bottom_value($identifier, $data, $default = '')
+    {
