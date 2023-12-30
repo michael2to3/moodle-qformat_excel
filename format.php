@@ -438,3 +438,4 @@ class qformat_xlsxtable extends qformat_default
         return $keys;
 
     }//end process_data()
+
