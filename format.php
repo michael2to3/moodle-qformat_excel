@@ -407,3 +407,4 @@ class qformat_xlsxtable extends qformat_default
     }//end readquestions()
 
 
+    private function abs_val($str)
