@@ -52,3 +52,4 @@ $string['cannotreadzippedfile'] = 'Не удается прочитать сжа
 $string['cannotwritetotempfile'] = 'Не удается записать во временный файл <b>{$a}</b>';
 $string['docnotsupported'] = 'Файлы в формате XLSX 2003 не поддерживаются: <b>{$a}</b>, вместо этого используйте Moodle2XLSX 3.x';
 $string['htmldocnotsupported'] = 'Неверный формат XLSX: пожалуйста, используйте <i>Файл>Сохранить как...</i> для сохранения <b>{$a}</b> в нативном формате XLSX 2010 (.xlsx) и повторно импортируйте';
+$string['htmlnotsupported'] = 'Файлы в формате HTML не поддерживаются: <b>{$a}</b>';
