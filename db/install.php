@@ -15,3 +15,4 @@ defined('MOODLE_INTERNAL') || die();
 /**
  * Post-install script
  */
+function xmldb_qformat_xlsxtable_install() {
