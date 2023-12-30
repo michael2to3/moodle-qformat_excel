@@ -273,3 +273,4 @@ fabric.properties
 
 # PHPUnit
 /app/phpunit.xml
+/phpunit.xml
