@@ -524,3 +524,4 @@ class qformat_xlsxtable extends qformat_default
             throw new moodle_exception('noquestions', 'qformat_xlsxtable');
         }
 
+        $workbook  = new MoodleExcelWorkbook($this->filename);
