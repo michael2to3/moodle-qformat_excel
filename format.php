@@ -431,3 +431,4 @@ class qformat_xlsxtable extends qformat_default
 
         for ($i = 1; $i < $countRows; $i++) {
             for ($j = 0; $j < $countColumns; $j++) {
+                $keys[$data[0][$j]][] = $data[$i][$j];
