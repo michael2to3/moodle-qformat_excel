@@ -384,3 +384,4 @@ class qformat_xlsxtable extends qformat_default
                 $q->tags         = [
                     'xlsxtable',
                     $sheetData['name'],
+                ];
