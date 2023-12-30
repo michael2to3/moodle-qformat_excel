@@ -55,3 +55,4 @@ class qformat_wordtable_export_test extends question_testcase {
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
+// Moodle is distributed in the hope that it will be useful,
