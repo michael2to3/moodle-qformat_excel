@@ -268,3 +268,4 @@ fabric.properties
 # Reference: https://phpunit.de/
 
 # Generated files
+.phpunit.result.cache
