@@ -367,3 +367,4 @@ class qformat_xlsxtable extends qformat_default
 
                 foreach ($keys as $key => $value) {
                     if ($key === '_answer') {
+                        debugging('Skip _answer to be processed', DEBUG_DEVELOPER);
