@@ -187,3 +187,4 @@ tags
 .idea/**/shelf
 
 # AWS User-specific
+.idea/**/aws.xml
