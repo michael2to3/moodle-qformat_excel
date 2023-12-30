@@ -393,3 +393,4 @@ class qformat_xlsxtable extends qformat_default
                         'format' => FORMAT_HTML,
                     ],
                 ];
+
