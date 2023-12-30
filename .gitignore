@@ -292,3 +292,4 @@ Session.vim
 Sessionx.vim
 
 # Temporary
+.netrwhist
