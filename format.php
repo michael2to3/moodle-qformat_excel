@@ -419,3 +419,4 @@ class qformat_xlsxtable extends qformat_default
 
 
     private function process_data($data)
+    {
