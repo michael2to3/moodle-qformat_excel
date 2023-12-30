@@ -339,3 +339,4 @@ class qformat_xlsxtable extends qformat_default
     {
         if (!preg_match('#\.xlsx$#i', $file->get_filename())) {
             return get_string('errorfilenamemustbexlsx', 'qformat_xlsxtable');
+        }
