@@ -425,3 +425,4 @@ class qformat_xlsxtable extends qformat_default
         $countRows    = $count[1];
 
         $keys = [];
+        for ($j = 0; $j < $countColumns; $j++) {
