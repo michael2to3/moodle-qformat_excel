@@ -578,3 +578,4 @@ class qformat_xlsxtable extends qformat_default
                 $mimeType                 = 'image/png';
                 if (function_exists('mime_content_type')) {
                     $mimeType = mime_content_type($imagePath);
+                }
