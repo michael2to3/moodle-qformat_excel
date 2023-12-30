@@ -87,3 +87,4 @@ require_once($CFG->dirroot . '/tag/lib.php');
  *
  * Each test has a question in XML format, which is converted to HTML using
  * the qformat_wordtable::presave_process method, and then compared to the expected output.
+ * @copyright  2016 Eoin Campbell
