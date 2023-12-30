@@ -338,3 +338,4 @@ class qformat_xlsxtable extends qformat_default
     public function validate_file(stored_file $file): string
     {
         if (!preg_match('#\.xlsx$#i', $file->get_filename())) {
+            return get_string('errorfilenamemustbexlsx', 'qformat_xlsxtable');
