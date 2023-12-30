@@ -518,3 +518,4 @@ class qformat_xlsxtable extends qformat_default
     }//end writequestion()
 
 
+    public function presave_process($content)
