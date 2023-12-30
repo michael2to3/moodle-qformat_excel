@@ -50,3 +50,4 @@ $string['xlsx_showhide_assessment_view'] = 'Show/Hide Assessment View';
 $string['xlsx_shuffle_screentip'] = 'Shuffle the answers to MCQ/TF/MA questions';
 $string['xlsx_shuffle_supertip'] = 'A few shuffles is better than 1';
 $string['xlsx_view'] = 'View';
+<?php
