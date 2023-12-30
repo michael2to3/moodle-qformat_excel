@@ -534,3 +534,4 @@ class qformat_xlsxtable extends qformat_default
                 $worksheet->write($rowIndex, 2, $a->answer);
             }
         }
+
