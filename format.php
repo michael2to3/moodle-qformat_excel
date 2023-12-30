@@ -562,3 +562,4 @@ class qformat_xlsxtable extends qformat_default
                 foreach ($cellIterator as $cell) {
                     $value     = $cell->getCalculatedValue();
                     $rowData[] = $value;
+                }
