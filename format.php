@@ -307,3 +307,4 @@ require_once "$CFG->dirroot/lib/excellib.class.php";
 use moodle_exception;
 
 require_once "$CFG->libdir/phpspreadsheet/vendor/autoload.php";
+use PhpOffice\PhpSpreadsheet\IOFactory;
