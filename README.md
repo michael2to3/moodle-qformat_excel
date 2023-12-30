@@ -99,3 +99,4 @@ No additional configuration is needed after installation. However, you can modif
 
 For issues, feature requests, or contributions, please use the [Issues](https://github.com/michael2to3/moodle-qformat_xlsx/issues) section of this repository.
 
+## License
