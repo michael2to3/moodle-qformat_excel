@@ -61,3 +61,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 - **User-Friendly Interface**: Simple and intuitive UI for both importing and exporting processes.
 - **Data Integrity**: Ensures that the data structure is maintained during the import/export process.
 
+## Installation
