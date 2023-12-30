@@ -78,3 +78,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 ## Usage
 
 ### Importing XLSX Files
+
