@@ -79,3 +79,4 @@ $string['cloze_mcformat_label'] = 'Orientation (D = dropdown; V = vertical, H = 
 $string['description_instructions'] = 'This is not actually a question. Instead it is a way to add some instructions, rubric or other content to the activity. This is similar to the way that labels can be used to add content to the course page.';
 $string['essay_instructions'] = 'Allows a response of a few sentences or paragraphs. This must then be graded manually.';
 $string['interface_language_mismatch'] = 'No questions imported because the language of the labels in the XLSX file does not match your current Moodle interface language.';
+$string['multichoice_instructions'] = 'Allows the selection of a single or multiple responses from a pre-defined list.';
