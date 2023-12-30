@@ -73,3 +73,4 @@ $string['xsltunavailable'] = 'You need the XSLT library installed in PHP to save
 
 // Strings used in XSLT when converting questions into XLSX format.
 $string['cloze_distractor_column_label'] = 'Distractors';
+$string['cloze_feedback_column_label'] = 'Distractor Feedback';
