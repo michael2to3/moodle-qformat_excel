@@ -67,3 +67,4 @@ class qformat_wordtable_export_test extends question_testcase {
  * Unit tests for the Moodle WordTable format.
  *
  * @package    qformat_wordtable
+ * @copyright  2016 Eoin Campbell
