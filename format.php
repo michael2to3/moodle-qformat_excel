@@ -449,3 +449,4 @@ class qformat_xlsxtable extends qformat_default
             if (empty($column)) {
                 break;
             }
+
