@@ -300,3 +300,4 @@ class qformat_xlsxtable extends qformat_default
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once "$CFG->libdir/xmlize.php";
