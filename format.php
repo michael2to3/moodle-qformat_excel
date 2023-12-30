@@ -502,3 +502,4 @@ class qformat_xlsxtable extends qformat_default
 
     }//end bottom_value()
 
+
