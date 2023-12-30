@@ -349,3 +349,4 @@ class qformat_xlsxtable extends qformat_default
     public function readquestions($data)
     {
         $qa = [];
+        foreach ($data['sheets'] as $sheetIndex => $sheetData) {
