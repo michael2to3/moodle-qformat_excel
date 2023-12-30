@@ -75,3 +75,4 @@ $string['xsltunavailable'] = 'You need the XSLT library installed in PHP to save
 $string['cloze_distractor_column_label'] = 'Distractors';
 $string['cloze_feedback_column_label'] = 'Distractor Feedback';
 $string['cloze_instructions'] = 'Use <strong>bold</strong> for Multichoice, <em>italic</em> for Short Answer, and <u>Underline</u> for Numerical questions.';
+$string['cloze_mcformat_label'] = 'Orientation (D = dropdown; V = vertical, H = horizontal radio buttons)';
