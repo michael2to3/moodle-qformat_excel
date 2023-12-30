@@ -357,3 +357,4 @@ class qformat_xlsxtable extends qformat_default
             $penalty        = $this->abs_val($this->bottom_value('_penalty', $sheet, '0.333'));
             $fraction       = $this->abs_val($this->bottom_value('_fraction', $sheet, '1.0'));
             $qtype          = $this->bottom_value('_qtype', $sheet, 'numerical');
+            $keys           = $this->process_data($sheet);
