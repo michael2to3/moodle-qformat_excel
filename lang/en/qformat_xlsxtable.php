@@ -67,3 +67,4 @@ $string['privacy:metadata'] = 'The XLSXTable question format plugin does not sto
 $string['stylesheetunavailable'] = 'XSLT Stylesheet <b>{$a}</b> is not available';
 $string['transformationfailed'] = 'XSLT transformation failed (<b>{$a}</b>)';
 $string['xlsxtable'] = 'Microsoft XLSX table format';
+$string['xlsxtable_help'] = 'This is a front-end for converting Microsoft XLSX files into Moodle Question XML format for import, and converting Moodle Question XML format into an enhanced XHTML format for exporting into a format suitable for editing in Microsoft XLSX.';
