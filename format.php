@@ -460,3 +460,4 @@ class qformat_xlsxtable extends qformat_default
                 if (empty($cell)) {
                     $countEmpty++;
                 }
+            }
