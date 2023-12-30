@@ -54,3 +54,4 @@ $string['xlsx_view'] = 'View';
 // Strings used in format.php.
 $string['cannotopentempfile'] = 'Cannot open temporary file <b>{$a}</b>';
 $string['cannotreadzippedfile'] = 'Cannot read Zipped file <b>{$a}</b>';
+$string['cannotwritetotempfile'] = 'Cannot write to temporary file <b>{$a}</b>';
