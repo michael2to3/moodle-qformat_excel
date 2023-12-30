@@ -154,3 +154,4 @@ tags
 /vendor/*
 /config/app.php
 
+/tmp/cache/models/*
