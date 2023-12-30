@@ -570,3 +570,4 @@ class qformat_xlsxtable extends qformat_default
             $drawings = $worksheet->getDrawingCollection();
             foreach ($drawings as $drawing) {
                 $imageData                = [];
+                $imagePath                = $drawing->getPath();
