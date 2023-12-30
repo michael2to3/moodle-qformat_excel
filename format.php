@@ -557,3 +557,4 @@ class qformat_xlsxtable extends qformat_default
             $sheetData = ['name' => $worksheet->getTitle()];
             foreach ($worksheet->getRowIterator() as $row) {
                 $cellIterator = $row->getCellIterator();
+                $cellIterator->setIterateOnlyExistingCells(false);
