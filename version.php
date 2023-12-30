@@ -11,3 +11,4 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->version   = 2023112500;
 $plugin->maturity  = MATURITY_STABLE;
+$plugin->component  = 'qformat_xlsxtable';
