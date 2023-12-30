@@ -529,3 +529,4 @@ class qformat_xlsxtable extends qformat_default
         foreach ($this->lessonquestions as $rowIndex => $question) {
             $worksheet->write($rowIndex, 0, $question->name);
             $worksheet->write($rowIndex, 1, $question->questiontext);
+            $answers = $question->options->answers;
