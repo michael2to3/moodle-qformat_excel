@@ -163,3 +163,4 @@ tags
 /tmp/sessions/*
 !/tmp/sessions/empty
 /tmp/tests/*
+!/tmp/tests/empty
