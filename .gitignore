@@ -221,3 +221,4 @@ tags
 # CMake
 cmake-build-*/
 
+# Mongo Explorer plugin
