@@ -345,3 +345,4 @@ class qformat_xlsxtable extends qformat_default
 
     }//end validate_file()
 
+
