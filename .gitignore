@@ -211,3 +211,4 @@ tags
 # auto-import.
 # .idea/artifacts
 # .idea/compiler.xml
+# .idea/jarRepositories.xml
