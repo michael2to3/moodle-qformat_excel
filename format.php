@@ -563,3 +563,4 @@ class qformat_xlsxtable extends qformat_default
                     $value     = $cell->getCalculatedValue();
                     $rowData[] = $value;
                 }
+
