@@ -547,3 +547,4 @@ class qformat_xlsxtable extends qformat_default
             return false;
         }
 
+        $reader      = IOFactory::createReader('Xlsx');
