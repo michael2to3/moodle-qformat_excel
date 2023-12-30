@@ -587,3 +587,4 @@ class qformat_xlsxtable extends qformat_default
 
             $data['sheets'][] = $sheetData;
         }//end for
+
