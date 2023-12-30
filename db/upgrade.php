@@ -22,3 +22,4 @@ function xmldb_qformat_xlsxtable_upgrade($oldversion) {
         unset_config('registration_url', 'qformat_xlsxtable');
         unset_config('username', 'qformat_xlsxtable');
         unset_config('password', 'qformat_xlsxtable');
+    }
