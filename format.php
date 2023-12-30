@@ -401,3 +401,4 @@ class qformat_xlsxtable extends qformat_default
                 $qa[]         = $q;
             }//end for
         }//end foreach
+
