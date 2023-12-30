@@ -510,3 +510,4 @@ class qformat_xlsxtable extends qformat_default
     }//end export_file_extension()
 
 
+    public function writequestion($question)
