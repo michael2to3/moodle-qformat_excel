@@ -526,3 +526,4 @@ class qformat_xlsxtable extends qformat_default
 
         $workbook  = new MoodleExcelWorkbook($this->filename);
         $worksheet = $workbook->add_worksheet('Questions');
+        foreach ($this->lessonquestions as $rowIndex => $question) {
