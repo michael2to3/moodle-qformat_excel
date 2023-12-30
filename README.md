@@ -68,3 +68,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
     git clone https://github.com/michael2to3/moodle-qformat_xlsx.git
     ```
 2. **Install the Plugin on Moodle**:
+   - Navigate to your Moodle installation's `admin/tool/installaddon/index.php` page.
