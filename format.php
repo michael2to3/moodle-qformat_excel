@@ -575,3 +575,4 @@ class qformat_xlsxtable extends qformat_default
                 $imageData['coordinates'] = $drawing->getCoordinates();
                 $imageData['name']        = $drawing->getName();
                 $imageData['base64']      = base64_encode(file_get_contents($imagePath));
+                $mimeType                 = 'image/png';
