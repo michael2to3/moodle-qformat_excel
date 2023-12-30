@@ -326,3 +326,4 @@ class qformat_xlsxtable extends qformat_default
         return true;
 
     }//end provide_export()
+
