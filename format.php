@@ -413,3 +413,4 @@ class qformat_xlsxtable extends qformat_default
             return (floatval($str) / 100);
         }
 
+        return floatval($str);
