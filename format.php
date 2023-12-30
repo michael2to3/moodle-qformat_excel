@@ -564,3 +564,4 @@ class qformat_xlsxtable extends qformat_default
                     $rowData[] = $value;
                 }
 
+                $sheetData['rows'][] = $rowData;
