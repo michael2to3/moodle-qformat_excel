@@ -446,3 +446,4 @@ class qformat_xlsxtable extends qformat_default
         $countColumns = 0;
 
         foreach ($data[0] as $i => $column) {
+            if (empty($column)) {
