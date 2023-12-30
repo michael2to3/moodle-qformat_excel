@@ -408,3 +408,4 @@ class qformat_xlsxtable extends qformat_default
 
 
     private function abs_val($str)
+    {
