@@ -369,3 +369,4 @@ class qformat_xlsxtable extends qformat_default
                     if ($key === '_answer') {
                         debugging('Skip _answer to be processed', DEBUG_DEVELOPER);
                         continue;
+                    }
