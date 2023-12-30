@@ -86,3 +86,4 @@ $string['unsupported_instructions'] = 'Importing this question type is not suppo
 // These strings are part of the XLSX Startup template user interface, not the Moodle interface.
 // These templates are available at http://www.moodle2xlsx.net/.
 $string['xlsx_about_moodle2xlsx'] = 'About Moodle2XLSX';
+$string['xlsx_about_moodle2xlsx_screentip'] = 'About the Moodle2XLSX XLSX templates and Moodle plug-in';
