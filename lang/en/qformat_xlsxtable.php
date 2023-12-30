@@ -83,3 +83,4 @@ $string['multichoice_instructions'] = 'Allows the selection of a single or multi
 $string['truefalse_instructions'] = 'Set grade \'100\' to the correct answer.';
 $string['unsupported_instructions'] = 'Importing this question type is not supported.';
 
+// These strings are part of the XLSX Startup template user interface, not the Moodle interface.
