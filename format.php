@@ -394,3 +394,4 @@ class qformat_xlsxtable extends qformat_default
                     ],
                 ];
 
+                $q->fraction  = [$fraction];
