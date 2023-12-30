@@ -94,3 +94,4 @@ $string['xlsx_import'] = 'Import';
 $string['xlsx_multiple_answer'] = 'Multiple answer';
 $string['xlsx_new_question_file'] = 'New Question File';
 $string['xlsx_new_question_file_screentip'] = 'Questions must be saved in XLSX (.xlsx) format';
+$string['xlsx_new_question_file_supertip'] = 'Each XLSX file may contain multiple categories';
