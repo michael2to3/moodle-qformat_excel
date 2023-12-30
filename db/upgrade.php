@@ -19,3 +19,4 @@ function xmldb_qformat_xlsxtable_upgrade($oldversion) {
 
     if (get_config('converter_url', 'qformat_xlsxtable') !== false) {
         unset_config('converter_url', 'qformat_xlsxtable');
+        unset_config('registration_url', 'qformat_xlsxtable');
