@@ -343,3 +343,4 @@ class qformat_xlsxtable extends qformat_default
 
         return '';
 
+    }//end validate_file()
