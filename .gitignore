@@ -240,3 +240,4 @@ atlassian-ide-plugin.xml
 .idea/replstate.xml
 
 # SonarLint plugin
+.idea/sonarlint/
