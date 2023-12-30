@@ -90,3 +90,4 @@ $string['xlsx_about_moodle2xlsx_screentip'] = 'About the Moodle2XLSX XLSX templa
 $string['xlsx_addcategory_supertip'] = 'Category names use the Heading 1 style';
 $string['xlsx_currentquestion'] = ' (Current Question)';
 $string['xlsx_gapselect_screentip'] = 'Warning: customised Select missing xlsxs Moodle plugin required for this question type.';
+$string['xlsx_import'] = 'Import';
