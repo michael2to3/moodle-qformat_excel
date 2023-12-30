@@ -590,3 +590,4 @@ class qformat_xlsxtable extends qformat_default
 
         return $data;
 
+    }//end readdata()
