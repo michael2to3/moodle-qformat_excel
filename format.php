@@ -370,3 +370,4 @@ class qformat_xlsxtable extends qformat_default
                         debugging('Skip _answer to be processed', DEBUG_DEVELOPER);
                         continue;
                     }
+
