@@ -453,3 +453,4 @@ class qformat_xlsxtable extends qformat_default
             $countColumns = ($i + 1);
         }
 
+        foreach ($data as $i => $row) {
