@@ -50,3 +50,4 @@ For issues, feature requests, or contributions, please use the [Issues](https://
 ## License
 
 This plugin is released under the [GNU General Public License](LICENSE). See the LICENSE file for more details.
+# moodle-qformat_xlsx
