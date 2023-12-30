@@ -336,3 +336,4 @@ class qformat_xlsxtable extends qformat_default
 
 
     public function validate_file(stored_file $file): string
+    {
