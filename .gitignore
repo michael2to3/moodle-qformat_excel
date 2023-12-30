@@ -230,3 +230,4 @@ cmake-build-*/
 # IntelliJ
 out/
 
+# mpeltonen/sbt-idea plugin
