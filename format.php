@@ -473,3 +473,4 @@ class qformat_xlsxtable extends qformat_default
                     $countRows = ($i + 1);
                 }
             }
+        }//end foreach
