@@ -316,3 +316,4 @@ class qformat_xlsxtable extends qformat_default
 
     public function provide_import()
     {
+        return true;
