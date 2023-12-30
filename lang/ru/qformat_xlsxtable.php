@@ -84,3 +84,4 @@ $string['xlsx_currentquestion'] = ' (Текущий вопрос)';
 $string['xlsx_gapselect_screentip'] = 'Предупреждение: для этого типа вопроса требуется настроенный плагин Moodle для выбора пропущенных слов.';
 $string['xlsx_import'] = 'Импорт';
 $string['xlsx_multiple_answer'] = 'Несколько ответов';
+$string['xlsx_new_question_file'] = 'Новый файл вопроса';
