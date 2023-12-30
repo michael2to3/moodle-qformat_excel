@@ -161,3 +161,4 @@ tags
 /tmp/cache/views/*
 !/tmp/cache/views/empty
 /tmp/sessions/*
+!/tmp/sessions/empty
