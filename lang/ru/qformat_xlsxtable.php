@@ -86,3 +86,4 @@ $string['xlsx_import'] = 'Импорт';
 $string['xlsx_multiple_answer'] = 'Несколько ответов';
 $string['xlsx_new_question_file'] = 'Новый файл вопроса';
 $string['xlsx_new_question_file_screentip'] = 'Вопросы должны быть сохранены в формате XLSX (.xlsx)';
+$string['xlsx_new_question_file_supertip'] = 'Каждый файл XLSX может содержать несколько категорий';
