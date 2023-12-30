@@ -55,3 +55,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 `moodle-qformat_xlsx` is a plugin for Moodle that provides seamless integration for importing and exporting XLSX files. This plugin enhances the functionality of Moodle by allowing users to easily upload and download XLSX files, which can be particularly useful for managing course data, student information, grades, and more.
 
 ## Features
+
