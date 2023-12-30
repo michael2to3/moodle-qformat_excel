@@ -583,3 +583,4 @@ class qformat_xlsxtable extends qformat_default
                 $imageData['mimetype'] = $mimeType;
 
                 $sheetData['images'][] = $imageData;
+            }
