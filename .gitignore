@@ -168,3 +168,4 @@ tags
 /logs/*
 !/logs/empty
 
+# CakePHP 2
