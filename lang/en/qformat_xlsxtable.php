@@ -98,3 +98,4 @@ $string['xlsx_new_question_file_supertip'] = 'Each XLSX file may contain multipl
 $string['xlsx_setunset_assessment_view'] = 'Set/Unset Assessment View';
 $string['xlsx_showhide_assessment_screentip'] = 'Show question metadata to edit, hide to preview printed assessment';
 $string['xlsx_showhide_assessment_supertip'] = 'Shows or hides the hidden text';
+$string['xlsx_showhide_assessment_view'] = 'Show/Hide Assessment View';
