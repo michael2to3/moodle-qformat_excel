@@ -67,3 +67,4 @@ $string['xmlnotsupported'] = 'Файлы в формате XML не поддер
 $string['xsltunavailable'] = 'Вам нужна библиотека XSLT, установленная в PHP, чтобы сохранить этот файл XLSX';
 
 $string['cloze_distractor_column_label'] = 'Отвлекающие факторы';
+$string['cloze_feedback_column_label'] = 'Обратная связь для отвлекающих факторов';
