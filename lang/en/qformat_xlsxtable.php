@@ -66,3 +66,4 @@ $string['preview_question_not_found'] = 'Preview question not found, name / cour
 $string['privacy:metadata'] = 'The XLSXTable question format plugin does not store any personal data.';
 $string['stylesheetunavailable'] = 'XSLT Stylesheet <b>{$a}</b> is not available';
 $string['transformationfailed'] = 'XSLT transformation failed (<b>{$a}</b>)';
+$string['xlsxtable'] = 'Microsoft XLSX table format';
