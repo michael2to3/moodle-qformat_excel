@@ -15,3 +15,4 @@ class provider implements \core_privacy\local\metadata\null_provider {
         return 'privacy:metadata';
     }
 }
+<?php
