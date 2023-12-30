@@ -572,3 +572,4 @@ class qformat_xlsxtable extends qformat_default
                 $imageData                = [];
                 $imagePath                = $drawing->getPath();
                 $imageData['path']        = $imagePath;
+                $imageData['coordinates'] = $drawing->getCoordinates();
