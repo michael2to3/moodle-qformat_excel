@@ -382,3 +382,4 @@ class qformat_xlsxtable extends qformat_default
                 $q->id           = $i;
                 $q->name         = $name;
                 $q->tags         = [
+                    'xlsxtable',
