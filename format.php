@@ -373,3 +373,4 @@ class qformat_xlsxtable extends qformat_default
 
                     $qtext .= "<p><b>{$key}</b>: {$value[$i]}</p>";
                 }
+
