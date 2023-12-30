@@ -88,3 +88,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 
 1. Navigate to the section where you want to export data (e.g., grades, attendance).
 2. Select the `Export to XLSX` option.
+3. Customize the data fields and filters as per your requirements.
