@@ -55,3 +55,4 @@ $string['xlsx_view'] = 'View';
 $string['cannotopentempfile'] = 'Cannot open temporary file <b>{$a}</b>';
 $string['cannotreadzippedfile'] = 'Cannot read Zipped file <b>{$a}</b>';
 $string['cannotwritetotempfile'] = 'Cannot write to temporary file <b>{$a}</b>';
+$string['docnotsupported'] = 'Files in XLSX 2003 format not supported: <b>{$a}</b>, use Moodle2XLSX 3.x instead';
