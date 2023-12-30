@@ -507,3 +507,4 @@ class qformat_xlsxtable extends qformat_default
     {
         return '.xlsx';
 
+    }//end export_file_extension()
