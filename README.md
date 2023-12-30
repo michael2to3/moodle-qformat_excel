@@ -80,3 +80,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 ### Importing XLSX Files
 
 1. Navigate to the `moodle-qformat_xlsx` import section in Moodle.
+2. Choose the XLSX file you want to import.
