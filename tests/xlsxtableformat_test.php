@@ -68,3 +68,4 @@ class qformat_wordtable_export_test extends question_testcase {
  *
  * @package    qformat_wordtable
  * @copyright  2016 Eoin Campbell
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
