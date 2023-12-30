@@ -16,3 +16,4 @@ class provider implements \core_privacy\local\metadata\null_provider {
     }
 }
 <?php
+namespace qformat_xlsxtable\privacy;
