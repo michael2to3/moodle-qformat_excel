@@ -93,3 +93,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 
 ## Configuration
 
+No additional configuration is needed after installation. However, you can modify the import/export settings based on your Moodle setup if necessary.
