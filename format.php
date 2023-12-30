@@ -497,3 +497,4 @@ class qformat_xlsxtable extends qformat_default
             }
         }
 
+        debugging('Not found bottom value', DEBUG_DEVELOPER);
