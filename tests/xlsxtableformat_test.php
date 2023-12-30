@@ -92,3 +92,4 @@ require_once($CFG->dirroot . '/tag/lib.php');
  * @group qformat_wordtable
  */
 class qformat_wordtable_export_test extends question_testcase {
+    public function test_pass() {
