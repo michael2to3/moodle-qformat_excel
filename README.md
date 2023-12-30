@@ -60,3 +60,4 @@ This plugin is released under the [GNU General Public License](LICENSE). See the
 - **Export to XLSX**: Export Moodle data like grades, attendance, and course information into an XLSX file.
 - **User-Friendly Interface**: Simple and intuitive UI for both importing and exporting processes.
 - **Data Integrity**: Ensures that the data structure is maintained during the import/export process.
+
