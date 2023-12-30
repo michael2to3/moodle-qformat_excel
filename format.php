@@ -330,3 +330,4 @@ class qformat_xlsxtable extends qformat_default
 
     public function mime_type()
     {
+        return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
