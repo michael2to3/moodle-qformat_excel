@@ -333,3 +333,4 @@ class qformat_xlsxtable extends qformat_default
         return 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
     }//end mime_type()
+
