@@ -59,3 +59,4 @@ $string['docnotsupported'] = 'Files in XLSX 2003 format not supported: <b>{$a}</
 $string['htmldocnotsupported'] = 'Incorrect XLSX format: please use <i>File>Save As...</i> to save <b>{$a}</b> in native XLSX 2010 (.xlsx) format and import again';
 $string['htmlnotsupported'] = 'Files in HTML format not supported: <b>{$a}</b>';
 $string['noquestions'] = 'No questions to export';
+$string['pluginname'] = 'Microsoft XLSX table format';
