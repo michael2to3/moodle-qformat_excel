@@ -14,3 +14,4 @@ function xmldb_qformat_xlsxtable_upgrade($oldversion) {
 }
 <?php
 defined('MOODLE_INTERNAL') || die();
+
