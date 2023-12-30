@@ -83,6 +83,10 @@ class qformat_xlsxtable extends qformat_default
                 $q               = $this->defaultquestion();
                 $q->id           = $i;
                 $q->name         = $name;
+                $q->tags         = [
+                    'xlsxtable',
+                    $sheetData['name'],
+                ];
                 $q->questiontext = $qtext;
                 $q->qtype        = $qtype;
                 $q->feedback     = [
@@ -204,6 +208,7 @@ class qformat_xlsxtable extends qformat_default
     public function export_file_extension()
     {
         return '.xlsx';
+
     }//end export_file_extension()
 
 
@@ -211,6 +216,7 @@ class qformat_xlsxtable extends qformat_default
     {
         $this->lessonquestions[] = $question;
         return true;
+
     }//end writequestion()
 
 
@@ -250,7 +256,7 @@ class qformat_xlsxtable extends qformat_default
         $sheetCount = $spreadsheet->getSheetCount();
         for ($sheetIndex = 0; $sheetIndex < $sheetCount; $sheetIndex++) {
             $worksheet = $spreadsheet->getSheet($sheetIndex);
-            $sheetData = [];
+            $sheetData = ['name' => $worksheet->getTitle()];
             foreach ($worksheet->getRowIterator() as $row) {
                 $cellIterator = $row->getCellIterator();
                 $cellIterator->setIterateOnlyExistingCells(false);
