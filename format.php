@@ -491,3 +491,4 @@ class qformat_xlsxtable extends qformat_default
             foreach ($row as $j => $value) {
                 if ($value === $identifier) {
                     $r = $data[($i + 1)][$j];
+                    debugging("Found $identifier, bottom value: {$r}", DEBUG_DEVELOPER);
