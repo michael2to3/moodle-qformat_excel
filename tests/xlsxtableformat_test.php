@@ -72,3 +72,4 @@ class qformat_wordtable_export_test extends question_testcase {
  */
 
 
+defined('MOODLE_INTERNAL') || die();
