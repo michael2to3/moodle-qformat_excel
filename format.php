@@ -362,3 +362,4 @@ class qformat_xlsxtable extends qformat_default
 
             debugging("Try import {$countQuestions} questions", DEBUG_DEVELOPER);
 
+            for ($i = 0; $i < $countQuestions; $i++) {
